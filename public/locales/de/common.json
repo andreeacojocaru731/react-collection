@@ -1,0 +1,7 @@
+{
+    "title":"React Collection",
+    "helloUser": "Hallo, {{name}}!",
+    "task_one": "{{count}} task",
+    "task_other": "{{count}} tasks",
+    "intlDateTime": "Task solved on {{val, datetime}}"
+}
