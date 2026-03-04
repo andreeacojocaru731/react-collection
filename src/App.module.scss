@@ -17,7 +17,6 @@ flex-wrap: wrap;
   color: rgb(127, 119, 241);
   text-decoration: none;
   font-weight: bold;
-  
 }
 
 .inactiveLink{
@@ -34,7 +33,12 @@ flex-wrap: wrap;
   box-sizing: border-box;
 }
 
-
+.title{
+  display:flex;
+  justify-content: center;
+  min-width: 320px;
+  box-sizing: border-box;
+}
 
 .page{
   min-width: 320px;
@@ -45,9 +49,9 @@ flex-wrap: wrap;
 .burgerMenu{
   border: none;
   color: white;
-  padding: 12px 16px;
   font-size: 16px;
   cursor: pointer;
+  margin-left: $value1rem;
 }
 
 .burgerMenu:hover{

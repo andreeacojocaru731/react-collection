@@ -1,3 +1,6 @@
+import Unauthorized from "../../auth/login/unauthorized";
+
 export default function MegaStoreApp() {
-  return <div>MegaStoreApp</div>;
+  const token = localStorage.getItem("token");
+  return <>{token ? <div>MegaStoreApp</div> : <Unauthorized />}</>;
 }

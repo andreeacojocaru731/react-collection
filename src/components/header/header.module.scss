@@ -1,0 +1,22 @@
+$value1rem: 1rem;
+$value2rem: 2rem;
+
+.header{
+  display:flex;
+  justify-content: space-between;
+  min-width: 320px;
+  padding: $value2rem $value2rem $value1rem;
+  box-sizing: border-box;
+}
+
+.burgerMenu{
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: $value1rem;
+}
+
+.burgerMenu:hover{
+  background-color: rgb(76, 77, 80);
+}
