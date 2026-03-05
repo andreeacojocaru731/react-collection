@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username.length > 8 && password.length > 16) {
+    if (username.length >= 8 && password.length >= 16) {
       const fakeAuthResponse = {
         token: "fake-jwt-token",
         role: "user",
