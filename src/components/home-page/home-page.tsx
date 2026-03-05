@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import Unauthorized from "../../auth/login/unauthorized";
-import Header from "../header/header";
 
 export default function HomePage() {
   const { t } = useTranslation("common");
@@ -9,7 +8,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
       {token ? (
         <>
           <div>HomePage</div>
