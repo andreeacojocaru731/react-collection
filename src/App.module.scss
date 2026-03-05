@@ -1,59 +1,23 @@
+@use "./colors.module.scss" as colors;
+
 $value1rem: 1rem;
 $value2rem: 2rem;
 
-.homeNav{
-  // align-items: flex-start;
-}
-
-.otherNav{
-display: grid;
-flex-wrap: wrap;
-// flex-direction: column;
-  justify-content: space-between;
-  align-content: space-between;
+@media (min-width:320px) {
+  .page{
+    min-width: 320px;
+    // padding: $value1rem ;
+    box-sizing: border-box;
+  }
 
 }
-.activeLink{
-  color: rgb(127, 119, 241);
-  text-decoration: none;
-  font-weight: bold;
+
+@media (min-width:768px) {
+  .page{
+    min-width: 768px;
+    padding: $value1rem $value2rem;
+    box-sizing: border-box;
+  }
+
 }
 
-.inactiveLink{
-  color: '#333';
-  text-decoration: underline;
-  font-weight: normal;
-}
-
-.header{
-  display:flex;
-  justify-content: space-between;
-  min-width: 320px;
-  padding: $value2rem $value2rem $value1rem;
-  box-sizing: border-box;
-}
-
-.title{
-  display:flex;
-  justify-content: center;
-  min-width: 320px;
-  box-sizing: border-box;
-}
-
-.page{
-  min-width: 320px;
-  padding: $value1rem $value2rem;
-  box-sizing: border-box;
-}
-
-.burgerMenu{
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: $value1rem;
-}
-
-.burgerMenu:hover{
-  background-color: rgb(76, 77, 80);
-}

@@ -48,26 +48,30 @@ function Header() {
   return (
     <>
       <div className={cx(Style.header)}>
-        <h1>{t("title")}</h1>
+        <label className={cx(Style.title)}>{t("title")}</label>
         {token ? (
-          <label aria-label={t("helloUser", { name: userName })}>
+          <label
+            className={cx(Style.title)}
+            aria-label={t("helloUser", { name: userName })}
+          >
             {t("helloUser", { name: userName })}
           </label>
         ) : (
           <></>
         )}
 
-        <div>
+        <div className={cx(Style.buttonGroup)}>
+          <LanguageSwitcher></LanguageSwitcher>
           {token ? (
-            <button onClick={handleLogoutClick}>
+            <button className={cx(Style.login)} onClick={handleLogoutClick}>
               <i className={cx("fa fa-sign-out")}></i>
             </button>
           ) : (
-            <button onClick={handleLoginClick}>
+            <button className={cx(Style.login)} onClick={handleLoginClick}>
               <i className={cx("fa fa-sign-in")}></i>
             </button>
           )}
-          <LanguageSwitcher></LanguageSwitcher>
+
           <button
             className={cx(Style.burgerMenu)}
             onClick={handleBurgerMenuClick}

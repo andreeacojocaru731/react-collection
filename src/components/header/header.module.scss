@@ -1,22 +1,100 @@
+@use "../../colors.module.scss" as colors;
+
 $value1rem: 1rem;
 $value2rem: 2rem;
 
-.header{
-  display:flex;
+@mixin hoverColor(){
+  background-color: colors.$hover;
+}
+
+.homeNav{
+  // align-items: flex-start;
+}
+
+.otherNav{
+display: grid;
+flex-wrap: wrap;
+// flex-direction: column;
   justify-content: space-between;
+  align-content: space-between;
+
+}
+.activeLink{
+  color: colors.$white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.inactiveLink{
+  color: colors.$white;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.title{
+  // display:flex;
+  // justify-content: center;
   min-width: 320px;
-  padding: $value2rem $value2rem $value1rem;
   box-sizing: border-box;
+  padding-top: 1rem;
+}
+
+.login{
+  font-size: 2rem;
+  height: 2.75rem;
+  width: 2.75rem;
+  cursor: pointer;
+  margin-left: $value1rem;
+  border-radius: 0.5rem;
+  &:hover{
+    @include hoverColor();
+  }
 }
 
 .burgerMenu{
-  border: none;
-  color: white;
-  font-size: 16px;
+  color: colors.$white;
+  font-size: 2rem;
+  height: 2.75rem;
+  width: 2.75rem;
   cursor: pointer;
   margin-left: $value1rem;
+  border-radius: 0.5rem;
+  &:hover{
+    @include hoverColor();
+  }
 }
 
-.burgerMenu:hover{
-  background-color: rgb(76, 77, 80);
+.buttonGroup{
+  display: flex;
+  margin-top: 1rem;
+}
+
+
+@media (min-width: 320px) {
+  .header{
+    display: grid;
+    min-width: 320px;
+    box-sizing: border-box;
+    padding:  $value1rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .header{
+    display:flex;
+    justify-content: space-between;
+    min-width: 768px;
+    box-sizing: border-box;
+    padding:  $value1rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header{
+    display:flex;
+    justify-content: space-between;
+    min-width: 1024px;
+    box-sizing: border-box;
+    padding:  $value1rem 0;
+  }
 }
