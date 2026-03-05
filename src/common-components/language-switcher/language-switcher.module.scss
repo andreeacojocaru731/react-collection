@@ -1,0 +1,19 @@
+@use "../../colors.module.scss" as colors;
+
+$value1rem: 1rem;
+$value2rem: 2rem;
+
+@mixin hoverColor(){
+  background-color: colors.$hover;
+}
+
+.languageSwitcher{
+  color: colors.$white;
+  height: 2.75rem;
+  width: 2.75rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  &:hover{
+    @include hoverColor();
+  }
+}
