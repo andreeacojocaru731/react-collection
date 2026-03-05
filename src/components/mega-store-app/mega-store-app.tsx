@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import Unauthorized from "../../auth/login/unauthorized";
 
+import cx from "classnames";
+import Style from "./mega-store-app.module.scss";
+import Divider from "../../common-components/divider/divider";
+
 export default function MegaStoreApp() {
   const token = localStorage.getItem("token");
 
@@ -10,7 +14,6 @@ export default function MegaStoreApp() {
   const [discountType, setDiscountType] = useState("standard");
 
   useEffect(() => {
-    console.log(discountType);
     switch (discountType) {
       case "standard":
         if (weight > 0 && price > 0) {
@@ -42,44 +45,68 @@ export default function MegaStoreApp() {
     }
   }, [discountType, weight, price]);
 
+  const handleOnChangeWeight = (e) => setWeight(e.target.value);
+  const handleOnChangePrice = (e) => setPrice(e.target.value);
+
   return (
     <>
       {token ? (
-        <div>
-          <label htmlFor="type">Select Type:</label>
-          <select
-            id="type"
-            name="type"
-            value={discountType}
-            onChange={(e) => setDiscountType(e.target.value)}
-          >
-            <option value="standard">Standard</option>
-            <option value="seasonal">Seasonal</option>
-            <option value="weight">Weight</option>
-          </select>
-
-          <label htmlFor="weight">Weight (kg):</label>
-          <input
-            type="number"
-            id="weight"
-            name="weight"
-            step="0.01"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-          />
-
-          <label htmlFor="totalPrice">Total Price ($):</label>
-          <input
-            type="number"
-            id="totalPrice"
-            name="totalPrice"
-            step="0.01"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-
+        <div className={cx(Style.content)}>
+          <Divider />
           <div>
-            Discounted price:<span id="discountedPrice">{discountedPrice}</span>
+            <p>A mega store offers different types of discount.</p>
+            <p>
+              Implement the PriceCalculator component which should take the
+              total weight of the shopping cart, the total price, and the
+              discount type. It should display the final discounted priced based
+              on the discount schemes as the input changes.
+            </p>
+            <p>
+              For example, when the discount type is weight, the weight of the
+              cart is 12 and the price is 100, the discounted price is 82.
+            </p>
+          </div>
+          <Divider />
+          <div className={cx(Style.solution)}>
+            <label htmlFor="type">Select Type:</label>
+            <select
+              id="type"
+              name="type"
+              value={discountType}
+              onChange={(e) => setDiscountType(e.target.value)}
+              className={cx(Style.input)}
+            >
+              <option value="standard">Standard</option>
+              <option value="seasonal">Seasonal</option>
+              <option value="weight">Weight</option>
+            </select>
+
+            <label htmlFor="weight">Weight (kg):</label>
+            <input
+              type="number"
+              id="weight"
+              name="weight"
+              step="0.01"
+              value={weight}
+              onChange={handleOnChangeWeight}
+              className={cx(Style.input)}
+            />
+
+            <label htmlFor="totalPrice">Total Price ($):</label>
+            <input
+              type="number"
+              id="totalPrice"
+              name="totalPrice"
+              step="0.01"
+              value={price}
+              onChange={handleOnChangePrice}
+              className={cx(Style.input)}
+            />
+
+            <div>
+              Discounted price:
+              <span id="discountedPrice">{discountedPrice}</span>
+            </div>
           </div>
         </div>
       ) : (
