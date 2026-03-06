@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, MemoryRouter } from "react-router-dom";
 import Style from "./App.module.scss";
 import cx from "classnames";
 import HomePage from "./components/home-page/home-page";
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <MemoryRouter>
         <div className={cx(Style.page)}>
           <UserContext.Provider value={{ userData, setUserData: setData }}>
             <Routes>
@@ -35,7 +35,7 @@ function App() {
             </Routes>
           </UserContext.Provider>
         </div>
-      </BrowserRouter>
+      </MemoryRouter>
     </>
   );
 }
