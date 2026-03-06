@@ -59,6 +59,9 @@ export default function MegaStoreApp() {
             <p>{t("megaStoreAppQuestionLine1")}</p>
             <p>{t("megaStoreAppQuestionLine2")}</p>
             <p>{t("megaStoreAppQuestionLine3")}</p>
+            <p>{t("megaStoreAppQuestionLine4")}</p>
+            <p>{t("megaStoreAppQuestionLine5")}</p>
+            <p>{t("megaStoreAppQuestionLine6")}</p>
           </div>
           <Divider />
           <div className={cx(Style.solution)}>

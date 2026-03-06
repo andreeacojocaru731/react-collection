@@ -8,5 +8,8 @@
     "homeDescription":"You can choose from different coding lessons from the menu",
     "megaStoreAppQuestionLine1":"A mega store offers different types of discount.",
     "megaStoreAppQuestionLine2":"Implement the PriceCalculator component which should take the total weight of the shopping cart, the total price, and the discount type. It should display the final discounted priced based on the discount schemes as the input changes.",
-    "megaStoreAppQuestionLine3":"For example, when the discount type is weight, the weight of the cart is 12 and the price is 100, the discounted price is 82."
+    "megaStoreAppQuestionLine3":"For example:",
+    "megaStoreAppQuestionLine4":"- When the discount type is standard, for any weight, the discount is 6%. The weight of the cart is 12 and the price is 100, the discounted price is 94.",
+    "megaStoreAppQuestionLine5":"- When the discount type is seasonal, for any weight, the discount is 12%. The weight of the cart is 12 and the price is 100, the discounted price is 88.",
+    "megaStoreAppQuestionLine6":"- When the discount type is weight, for weight<=10, the discount is 6% and for weight>10, the discount is 18%. The weight of the cart is 4 and the price is 94, the discounted price is 82. The weight of the cart is 12 and the price is 100, the discounted price is 82."
 }
