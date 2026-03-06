@@ -69,11 +69,19 @@ function Header() {
         <div className={cx(Style.buttonGroup)}>
           <LanguageSwitcher></LanguageSwitcher>
           {token ? (
-            <button className={cx(Style.login)} onClick={handleLogoutClick}>
+            <button
+              className={cx(Style.login)}
+              onClick={handleLogoutClick}
+              aria-label={"sign out"}
+            >
               <i className={cx("fa fa-sign-out")}></i>
             </button>
           ) : (
-            <button className={cx(Style.login)} onClick={handleLoginClick}>
+            <button
+              className={cx(Style.login)}
+              onClick={handleLoginClick}
+              aria-label={"sign in"}
+            >
               <i className={cx("fa fa-sign-in")}></i>
             </button>
           )}
@@ -81,6 +89,7 @@ function Header() {
           <button
             className={cx(Style.burgerMenu)}
             onClick={handleBurgerMenuClick}
+            aria-label={"open the menu"}
           >
             <i className={cx("fa fa-bars")}></i>
           </button>

@@ -16,9 +16,15 @@ export function LanguageSwitcher() {
         value={i18n.language}
         onChange={handleChange}
       >
-        <option value="en">EN</option>
-        <option value="fr">FR</option>
-        <option value="de">DE</option>
+        <option value="en" aria-label="english">
+          EN
+        </option>
+        <option value="fr" aria-label="french">
+          FR
+        </option>
+        <option value="de" aria-label="german">
+          DE
+        </option>
       </select>
     </div>
   );
