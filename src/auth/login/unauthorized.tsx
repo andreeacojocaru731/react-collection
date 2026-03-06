@@ -1,3 +1,8 @@
+import { useTranslation } from "react-i18next";
+import cx from "classnames";
+import Style from "./unauthorized.module.scss";
+
 export default function Unauthorized() {
-  return <div>Please log in to access the page</div>;
+  const { t } = useTranslation("common");
+  return <div className={cx(Style.unauthorized)}>{t("unauthorized")}</div>;
 }
