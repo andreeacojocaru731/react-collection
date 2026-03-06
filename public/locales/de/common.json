@@ -1,7 +1,12 @@
 {
+    "unauthorized":"Bitte melden Sie sich an, um auf die Seite zuzugreifen.",
     "title":"React Collection",
     "helloUser": "Hallo, {{name}}!",
     "task_one": "{{count}} task",
     "task_other": "{{count}} tasks",
-    "intlDateTime": "Task solved on {{val, datetime}}"
+    "intlDateTime": "Task solved on {{val, datetime}}",
+    "homeDescription":"Im Menü können Sie aus verschiedenen Programmierkursen auswählen.",
+    "megaStoreAppQuestionLine1":"Ein Megastore bietet verschiedene Rabattarten an.",
+    "megaStoreAppQuestionLine2":"Implementieren Sie die Komponente „Preisrechner“, die das Gesamtgewicht des Warenkorbs, den Gesamtpreis und die Rabattart als Eingabe benötigt. Sie soll den endgültigen Rabattpreis basierend auf den Rabattbedingungen bei jeder Änderung der Eingabe anzeigen.",
+    "megaStoreAppQuestionLine3":"Wenn beispielsweise die Rabattart Gewicht ist, das Gewicht des Warenkorbs 12 beträgt und der Preis 100, beträgt der rabattierte Preis 82."
 }

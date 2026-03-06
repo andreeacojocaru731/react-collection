@@ -9,7 +9,8 @@ import {
   useNavigate,
   type NavLinkRenderProps,
 } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../state-manager/userContext";
 
 function Header() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ function Header() {
     setUserName("Andreea"); // TODO: should come from be
   }, []);
   const token = localStorage.getItem("token");
+  const { setUserData } = useContext(UserContext);
   const { t } = useTranslation();
 
   const handleLoginClick = (e) => {
@@ -36,6 +38,10 @@ function Header() {
 
   const handleLogoutClick = (e) => {
     e.preventDefault();
+    setUserData({
+      token: "",
+      isLoggedIn: false,
+    });
     localStorage.setItem("token", "");
     localStorage.setItem("role", "");
     navigate("/");

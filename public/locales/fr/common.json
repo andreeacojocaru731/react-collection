@@ -1,7 +1,12 @@
 {
+    "unauthorized":"Veuillez vous connecter pour accéder à la page",
     "title":"React Collection",
     "helloUser": "Bonjour, {{name}}!",
     "task_one": "{{count}} task",
     "task_other": "{{count}} tasks",
-    "intlDateTime": "Task solved on {{val, datetime}}"
+    "intlDateTime": "Task solved on {{val, datetime}}",
+    "homeDescription":"Vous pouvez choisir parmi différents cours de programmation dans le menu.",
+    "megaStoreAppQuestionLine1":"Un hypermarché propose différents types de réductions."
+    ,"megaStoreAppQuestionLine2":"Implémentez le composant PriceCalculator qui prend en entrée le poids total du panier, le prix total et le type de réduction. Il doit afficher le prix final après réduction en fonction des conditions de réduction appliquées, et ce, à mesure que les valeurs saisies changent.",
+    "megaStoreAppQuestionLine3":"Par exemple, lorsque le type de réduction est le poids, que le poids du chariot est de 12 et que le prix est de 100, le prix réduit est de 82."
 }

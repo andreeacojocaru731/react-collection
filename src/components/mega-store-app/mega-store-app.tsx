@@ -4,9 +4,11 @@ import Unauthorized from "../../auth/login/unauthorized";
 import cx from "classnames";
 import Style from "./mega-store-app.module.scss";
 import Divider from "../../common-components/divider/divider";
+import { useTranslation } from "react-i18next";
 
 export default function MegaStoreApp() {
   const token = localStorage.getItem("token");
+  const { t } = useTranslation("common");
 
   const [weight, setWeight] = useState(0);
   const [price, setPrice] = useState(0);
@@ -54,17 +56,9 @@ export default function MegaStoreApp() {
         <div className={cx(Style.content)}>
           <Divider />
           <div>
-            <p>A mega store offers different types of discount.</p>
-            <p>
-              Implement the PriceCalculator component which should take the
-              total weight of the shopping cart, the total price, and the
-              discount type. It should display the final discounted priced based
-              on the discount schemes as the input changes.
-            </p>
-            <p>
-              For example, when the discount type is weight, the weight of the
-              cart is 12 and the price is 100, the discounted price is 82.
-            </p>
+            <p>{t("megaStoreAppQuestionLine1")}</p>
+            <p>{t("megaStoreAppQuestionLine2")}</p>
+            <p>{t("megaStoreAppQuestionLine3")}</p>
           </div>
           <Divider />
           <div className={cx(Style.solution)}>

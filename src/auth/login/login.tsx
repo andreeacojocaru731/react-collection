@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import cx from "classnames";
 import Style from "./login.module.scss";
+import { UserContext } from "../../state-manager/userContext";
 
 const Login = () => {
+  const { setUserData } = useContext(UserContext);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -15,6 +18,10 @@ const Login = () => {
         token: "fake-jwt-token",
         role: "user",
       };
+      setUserData({
+        token: fakeAuthResponse.token,
+        isLoggedIn: true,
+      });
       localStorage.setItem("token", fakeAuthResponse.token);
       localStorage.setItem("role", fakeAuthResponse.role);
       navigate("/");
