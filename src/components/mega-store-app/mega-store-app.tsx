@@ -47,7 +47,9 @@ export default function MegaStoreApp() {
 
   const handleOnChangeWeight = (e) => setWeight(e.target.value);
   const handleOnChangePrice = (e) => setPrice(e.target.value);
-
+  const handleOnChangeSelectType = (e) => {
+    setDiscountType(e.target.value);
+  };
   return (
     <>
       {token ? (
@@ -65,7 +67,7 @@ export default function MegaStoreApp() {
               id="type"
               name="type"
               value={discountType}
-              onChange={(e) => setDiscountType(e.target.value)}
+              onChange={handleOnChangeSelectType}
               className={cx(Style.input)}
             >
               <option value="standard">Standard</option>
