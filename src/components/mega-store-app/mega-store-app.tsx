@@ -31,14 +31,12 @@ export default function MegaStoreApp() {
         break;
       case "weight":
         if (weight > 0 && price > 0) {
-          if (weight > 20) {
-            const discount = price * 0.2;
-            setDiscountedPrice(price - discount);
-          } else if (weight > 10) {
-            const discount = price * 0.1;
+          if (weight > 10) {
+            const discount = price * 0.18;
             setDiscountedPrice(price - discount);
           } else {
-            setDiscountedPrice(price);
+            const discount = price * 0.06;
+            setDiscountedPrice(price - discount);
           }
         }
         break;
