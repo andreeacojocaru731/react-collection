@@ -114,6 +114,12 @@ function Header() {
               <NavLink to="/character-points" className={activeLinkClass}>
                 Character Points
               </NavLink>
+              <NavLink to="/toggle-message" className={activeLinkClass}>
+                Toggle Message
+              </NavLink>
+              <NavLink to="/todo-list" className={activeLinkClass}>
+                Todo List
+              </NavLink>
             </div>
           ) : (
             <></>

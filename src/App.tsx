@@ -7,6 +7,8 @@ import { UserContext } from "./state-manager/userContext";
 import { useState } from "react";
 import React from "react";
 import CharacterPoints from "./components/character-points/character-points";
+import ToggleMessage from "./components/toggle-message/toggle-message";
+import TodoList from "./components/todo-list/todo-list";
 
 const Login = React.lazy(() => import("./auth/login/login"));
 const Focus = React.lazy(() => import("./components/focus/focus"));
@@ -33,6 +35,8 @@ function App() {
                 <Route path="/focus" element={<Focus />} />
                 <Route path="/mega-store-app" element={<MegaStoreApp />} />
                 <Route path="/character-points" element={<CharacterPoints />} />
+                <Route path="/toggle-message" element={<ToggleMessage />} />
+                <Route path="/todo-list" element={<TodoList />} />
               </Route>
             </Routes>
           </UserContext.Provider>
