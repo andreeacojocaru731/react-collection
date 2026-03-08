@@ -1,0 +1,14 @@
+@mixin paddingTopBottom($valueTopBottom){
+    padding: $valueTopBottom 0;
+}
+
+.content{
+    @include paddingTopBottom(1rem);
+    min-width: 292px;
+    box-sizing: border-box;
+
+}
+
+
+
+
