@@ -1,6 +1,6 @@
 import Unauthorized from "../../auth/login/unauthorized";
 import Lesson from "../../common-components/lesson/lesson";
-import { useEffect, useRef, forwardRef, RefObject } from "react";
+import { useEffect, useRef, forwardRef } from "react";
 import cx from "classnames";
 import Style from "./focus.module.scss";
 
