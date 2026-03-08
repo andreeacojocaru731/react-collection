@@ -1,19 +1,23 @@
+@use "../../colors.module.scss" as colors;
 
+@mixin hoverColor(){
+  background-color: colors.$hover;
+}
 
 .loginPage{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: Calc(100vh - 8rem);
 }
 
 .loginCard{
-    background-color: rgba(255, 255, 255, 0.301);
+    background-color: colors.$background;
     padding: 2rem;
     border-radius: 1rem;
     max-width: 20rem;
     width: 100%;
-    box-shadow: 0 4px 1rem -4px rgba(165, 165, 165, 0.466) 
+    box-shadow: 0 4px 1rem -4px colors.$gray1
 }
 
 .loginTitle{
@@ -30,21 +34,28 @@
 }
 
 .loginInput{
-    // shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500
 }
 
 .username{
     margin-bottom:4;
+    display: grid;
 }
 
 
 
 .password{
     margin-bottom:6;
+    display: grid;
 }
 
 .loginButton{
-    // "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    background: colors.$buttons;
+    cursor:pointer;
+    border-radius: 0.5rem;
+
+    &:hover{
+        @include hoverColor();
+    }
 }
 
 .buttonGroup{
