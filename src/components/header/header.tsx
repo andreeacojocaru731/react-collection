@@ -120,6 +120,9 @@ function Header() {
               <NavLink to="/todo-list" className={activeLinkClass}>
                 Todo List
               </NavLink>
+              <NavLink to="/change-username" className={activeLinkClass}>
+                Change Username
+              </NavLink>
             </div>
           ) : (
             <></>

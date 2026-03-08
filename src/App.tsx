@@ -9,6 +9,7 @@ import React from "react";
 import CharacterPoints from "./components/character-points/character-points";
 import ToggleMessage from "./components/toggle-message/toggle-message";
 import TodoList from "./components/todo-list/todo-list";
+import ChangeUsername from "./components/change-username/change-username";
 
 const Login = React.lazy(() => import("./auth/login/login"));
 const Focus = React.lazy(() => import("./components/focus/focus"));
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/character-points" element={<CharacterPoints />} />
                 <Route path="/toggle-message" element={<ToggleMessage />} />
                 <Route path="/todo-list" element={<TodoList />} />
+                <Route path="/change-username" element={<ChangeUsername />} />
               </Route>
             </Routes>
           </UserContext.Provider>
