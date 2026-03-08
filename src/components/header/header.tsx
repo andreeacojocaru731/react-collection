@@ -111,6 +111,9 @@ function Header() {
               <NavLink to="/mega-store-app" className={activeLinkClass}>
                 Mega Store App
               </NavLink>
+              <NavLink to="/character-points" className={activeLinkClass}>
+                Character Points
+              </NavLink>
             </div>
           ) : (
             <></>

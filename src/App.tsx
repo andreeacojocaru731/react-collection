@@ -6,6 +6,7 @@ import Layout from "./components/layout/layout";
 import { UserContext } from "./state-manager/userContext";
 import { useState } from "react";
 import React from "react";
+import CharacterPoints from "./components/character-points/character-points";
 
 const Login = React.lazy(() => import("./auth/login/login"));
 const Focus = React.lazy(() => import("./components/focus/focus"));
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/focus" element={<Focus />} />
                 <Route path="/mega-store-app" element={<MegaStoreApp />} />
+                <Route path="/character-points" element={<CharacterPoints />} />
               </Route>
             </Routes>
           </UserContext.Provider>
