@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Unauthorized from "../../auth/login/unauthorized";
 
 import cx from "classnames";
 import Style from "./mega-store-app.module.scss";
-import Divider from "../../common-components/divider/divider";
 import { useTranslation } from "react-i18next";
+import Lesson from "../../common-components/lesson/lesson";
 
 export default function MegaStoreApp() {
   const token = localStorage.getItem("token");
@@ -15,30 +15,28 @@ export default function MegaStoreApp() {
   const [discountedPrice, setDiscountedPrice] = useState(0);
   const [discountType, setDiscountType] = useState("standard");
 
+  const calculateDiscountedPrice = useCallback(
+    (discount: number) => {
+      return price - price * discount;
+    },
+    [weight, price, discountType],
+  );
+
   useEffect(() => {
     switch (discountType) {
       case "standard":
-        if (weight > 0 && price > 0) {
-          const discount = price * 0.06;
-          setDiscountedPrice(price - discount);
-        }
+        setDiscountedPrice(calculateDiscountedPrice(0.06));
         break;
       case "seasonal":
-        if (weight > 0 && price > 0) {
-          const discount = price * 0.12;
-          setDiscountedPrice(price - discount);
-        }
+        setDiscountedPrice(calculateDiscountedPrice(0.12));
         break;
       case "weight":
-        if (weight > 0 && price > 0) {
-          if (weight > 10) {
-            const discount = price * 0.18;
-            setDiscountedPrice(price - discount);
-          } else {
-            const discount = price * 0.06;
-            setDiscountedPrice(price - discount);
-          }
+        if (weight > 10) {
+          setDiscountedPrice(calculateDiscountedPrice(0.18));
+        } else {
+          setDiscountedPrice(calculateDiscountedPrice(0.06));
         }
+
         break;
       default:
         console.log("issue");
@@ -50,20 +48,19 @@ export default function MegaStoreApp() {
   const handleOnChangeSelectType = (e) => {
     setDiscountType(e.target.value);
   };
+
+  const text: string[] = [
+    t("megaStoreAppQuestionLine1"),
+    t("megaStoreAppQuestionLine2"),
+    t("megaStoreAppQuestionLine3"),
+    t("megaStoreAppQuestionLine4"),
+    t("megaStoreAppQuestionLine5"),
+    t("megaStoreAppQuestionLine6"),
+  ];
   return (
     <>
       {token ? (
-        <div className={cx(Style.content)}>
-          <Divider />
-          <div>
-            <p>{t("megaStoreAppQuestionLine1")}</p>
-            <p>{t("megaStoreAppQuestionLine2")}</p>
-            <p>{t("megaStoreAppQuestionLine3")}</p>
-            <p>{t("megaStoreAppQuestionLine4")}</p>
-            <p>{t("megaStoreAppQuestionLine5")}</p>
-            <p>{t("megaStoreAppQuestionLine6")}</p>
-          </div>
-          <Divider />
+        <Lesson title={"Mega Store App"} text={text}>
           <div className={cx(Style.solution)}>
             <label htmlFor="type">Select Type:</label>
             <select
@@ -81,6 +78,7 @@ export default function MegaStoreApp() {
             <label htmlFor="weight">Weight (kg):</label>
             <input
               type="number"
+              min="0"
               id="weight"
               name="weight"
               step="0.01"
@@ -92,6 +90,7 @@ export default function MegaStoreApp() {
             <label htmlFor="totalPrice">Total Price ($):</label>
             <input
               type="number"
+              min="0"
               id="totalPrice"
               name="totalPrice"
               step="0.01"
@@ -105,7 +104,7 @@ export default function MegaStoreApp() {
               <span id="discountedPrice">{discountedPrice}</span>
             </div>
           </div>
-        </div>
+        </Lesson>
       ) : (
         <Unauthorized />
       )}
