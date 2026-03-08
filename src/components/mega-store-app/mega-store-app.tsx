@@ -16,25 +16,25 @@ export default function MegaStoreApp() {
   const [discountType, setDiscountType] = useState("standard");
 
   const calculateDiscountedPrice = useCallback(
-    (discount: number) => {
+    (price: number, discount: number) => {
       return price - price * discount;
     },
-    [weight, price, discountType],
+    [weight, price],
   );
 
   useEffect(() => {
     switch (discountType) {
       case "standard":
-        setDiscountedPrice(calculateDiscountedPrice(0.06));
+        setDiscountedPrice(calculateDiscountedPrice(price, 0.06));
         break;
       case "seasonal":
-        setDiscountedPrice(calculateDiscountedPrice(0.12));
+        setDiscountedPrice(calculateDiscountedPrice(price, 0.12));
         break;
       case "weight":
         if (weight > 10) {
-          setDiscountedPrice(calculateDiscountedPrice(0.18));
+          setDiscountedPrice(calculateDiscountedPrice(price, 0.18));
         } else {
-          setDiscountedPrice(calculateDiscountedPrice(0.06));
+          setDiscountedPrice(calculateDiscountedPrice(price, 0.06));
         }
 
         break;
