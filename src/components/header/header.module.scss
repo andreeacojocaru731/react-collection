@@ -12,9 +12,9 @@ $value2rem: 2rem;
 }
 
 .otherNav{
-display: grid;
-flex-wrap: wrap;
-// flex-direction: column;
+  display: grid;
+  flex-wrap: wrap;
+  // flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
 
@@ -29,14 +29,6 @@ flex-wrap: wrap;
   color: colors.$white;
   text-decoration: none;
   font-weight: normal;
-}
-
-.title{
-  // display:flex;
-  // justify-content: center;
-  min-width: 320px;
-  box-sizing: border-box;
-  padding-top: 1rem;
 }
 
 .login{
@@ -64,11 +56,6 @@ flex-wrap: wrap;
   }
 }
 
-.buttonGroup{
-  display: flex;
-  margin-top: 1rem;
-}
-
 
 @media (min-width: 320px) {
   .header{
@@ -77,6 +64,22 @@ flex-wrap: wrap;
     box-sizing: border-box;
     padding:  $value1rem 0;
   }
+
+  .title{
+  display:inline-flex;
+  justify-content: start;
+  align-items: center;
+  min-width: 320px;
+  box-sizing: border-box;
+  font-size: x-large;
+  // padding-top: 1rem;
+}
+
+
+.buttonGroup{
+  display: flex;
+  margin-top: 1rem;
+}
 }
 
 @media (min-width: 768px) {
@@ -87,6 +90,20 @@ flex-wrap: wrap;
     box-sizing: border-box;
     padding:  $value1rem 0;
   }
+
+  .title{
+  display:inline-flex;
+  justify-content: start;
+  align-items: center;
+  min-width: 320px;
+  box-sizing: border-box;
+  font-size: x-large;
+}
+
+.buttonGroup{
+  display: flex;
+  margin-top: 0;
+}
 }
 
 @media (min-width: 1024px) {
@@ -97,4 +114,18 @@ flex-wrap: wrap;
     box-sizing: border-box;
     padding:  $value1rem 0;
   }
+
+  .title{
+  display:inline-flex;
+  justify-content: start;
+  align-items: center;
+  min-width: 320px;
+  box-sizing: border-box;
+  font-size: xx-large;
+}
+
+.buttonGroup{
+  display: flex;
+  margin-top: 0;
+}
 }
