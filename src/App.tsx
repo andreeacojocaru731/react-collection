@@ -11,6 +11,7 @@ import ToggleMessage from "./components/toggle-message/toggle-message";
 import TodoList from "./components/todo-list/todo-list";
 import ChangeUsername from "./components/change-username/change-username";
 import GroceryApp from "./components/grocery-app/grocery-app";
+import ImageGalleryApp from "./components/image-gallery-app/image-gallery-app";
 
 const Login = React.lazy(() => import("./auth/login/login"));
 const Focus = React.lazy(() => import("./components/focus/focus"));
@@ -41,6 +42,10 @@ function App() {
                 <Route path="/todo-list" element={<TodoList />} />
                 <Route path="/change-username" element={<ChangeUsername />} />
                 <Route path="/grocery-app" element={<GroceryApp />} />
+                <Route
+                  path="/image-gallery-app"
+                  element={<ImageGalleryApp />}
+                />
               </Route>
             </Routes>
           </UserContext.Provider>

@@ -126,6 +126,9 @@ function Header() {
               <NavLink to="/grocery-app" className={activeLinkClass}>
                 Grocery App
               </NavLink>
+              <NavLink to="/image-gallery-app" className={activeLinkClass}>
+                Image Gallery App
+              </NavLink>
             </div>
           ) : (
             <></>
