@@ -123,6 +123,9 @@ function Header() {
               <NavLink to="/change-username" className={activeLinkClass}>
                 Change Username
               </NavLink>
+              <NavLink to="/grocery-app" className={activeLinkClass}>
+                Grocery App
+              </NavLink>
             </div>
           ) : (
             <></>
