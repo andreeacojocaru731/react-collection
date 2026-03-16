@@ -41,7 +41,11 @@ export default function Focus() {
   return (
     <>
       {token ? (
-        <Lesson title="Focus" text={text}>
+        <Lesson
+          title="Focus"
+          text={text}
+          source="https://www.testdome.com/questions/react-js/focus/149875"
+        >
           <div className={cx(Style.solution)}>
             <label htmlFor={"focusedFalse"}>Focus is False</label>
             <FocusableInput id={"focusedFalse"} focused={false} />

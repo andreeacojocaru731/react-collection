@@ -47,7 +47,11 @@ export default function ImageGalleryApp() {
   return (
     <>
       {token ? (
-        <Lesson title="Image Gallery App" text={text}>
+        <Lesson
+          title="Image Gallery App"
+          text={text}
+          source="https://www.testdome.com/questions/react-js/image-gallery-app/149717"
+        >
           <Solution></Solution>
         </Lesson>
       ) : (

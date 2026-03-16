@@ -5,13 +5,14 @@ import Style from "./lesson.module.scss";
 interface LessonProps {
   title: string;
   text: string[];
+  source: string;
   children: React.ReactNode;
 }
 
-export default function Lesson({ title, text, children }: LessonProps) {
+export default function Lesson({ title, text, source, children }: LessonProps) {
   return (
     <div className={cx(Style.content)}>
-      <div>{title}</div>
+      <a href={source}>{title}</a>
       <Divider />
       <div></div>
       {text.map((element, index) => {

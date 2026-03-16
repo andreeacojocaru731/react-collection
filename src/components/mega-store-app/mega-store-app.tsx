@@ -60,7 +60,11 @@ export default function MegaStoreApp() {
   return (
     <>
       {token ? (
-        <Lesson title={"Mega Store App"} text={text}>
+        <Lesson
+          title={"Mega Store App"}
+          text={text}
+          source="https://www.testdome.com/questions/react-js/mega-store-app/150588"
+        >
           <div className={cx(Style.solution)}>
             <label htmlFor="type">Select Type:</label>
             <select

@@ -79,7 +79,11 @@ export default function CharacterPoints() {
   return (
     <>
       {token ? (
-        <Lesson title="Character Points" text={text}>
+        <Lesson
+          title="Character Points"
+          text={text}
+          source="https://www.testdome.com/questions/react-js/character-points/151996"
+        >
           <Solution totalPoints={5}></Solution>
         </Lesson>
       ) : (
